@@ -4,7 +4,10 @@ def menu():
        [1] Saque
        [2] Deposito
        [3] Extrato
-       [4] Sair
+       [4] Criar Conta
+       [5] Novo Usuário
+       [6] Listar Contas
+       [7] Sair
     """)
     #Seleção do menu
  return int(input())
@@ -25,9 +28,25 @@ def sacar(*,saldo,saque,extrato,saques_total):
 def emitir_extrato(saldo,/,*,extrato):
     print ("Seu Saldo é de: ",saldo," Extrato: ",extrato)
 
-# def criar_usuario(usuario):
+def criar_usuario(usuarios):
+ cpf = input("Informe o CPF do novo usuário(somente números):")
+ usuario = filtrar_usuario(cpf,usuarios)
 
-# def filtrar_usuario(cpf,usuario):
+ if usuario:
+     print ("\n Já existe usuário com este CPF!")
+     return
+ 
+ nome = input("Informe o nome completo: ")
+ data_nascimento= input ("Informe a data de nascimento (dd-mm-aaaa): ")
+ endereco= input ("Informe o endereço(logadouro, nro - bairro - cidade/sigla estado): ")
+
+ usuarios.append({"nome":nome,"data_nascimento":data_nascimento,"cpf":cpf,"endereco":endereco})
+
+ print ("+++Usuário criado com sucesso!+++")
+
+def filtrar_usuario(cpf,usuarios):
+    usuarios_filtrados = [usuario for usuario in usuarios if usuario["cpf"] == cpf]
+    return usuarios_filtrados[0] if usuarios_filtrados else None
 
 # def criar_conta (agencia,numero_conta,usuarios):
 
@@ -36,9 +55,10 @@ def emitir_extrato(saldo,/,*,extrato):
 #Menu Saque ---------------------------------------------------------------------------
 def main():
     #variáveis
-    AGENCIA="0001"
+    AGENCIA = "0001"
+    usuarios = []
     saldo = 1000.0
-    saques_total=3
+    saques_total = 3
     extrato = []
 
     while True:
@@ -75,9 +95,18 @@ def main():
                saldo,extrato = depositar(saldo,deposito,extrato)
        #Menu Extrato ---------------------------------------------------------------------------
        elif opcao == 3:
-           emitir_extrato(saldo,extrato=extrato)           
-       #Menu Sair ------------------------------------------------------------------------------
+           emitir_extrato(saldo,extrato=extrato)  
        elif opcao == 4:
+           print ("Criar Conta")
+           break       
+       elif opcao == 5:
+           print ("Novo Usuario")
+           criar_usuario(usuarios)  
+       elif opcao == 6:
+           print ("Listar Contas")
+           break 
+       #Menu Sair ------------------------------------------------------------------------------
+       elif opcao == 7:
            print ("Obrigado por ser nosso cliente.")
            break
        #Prevenção de erro-----------------------------------------------------------------------
