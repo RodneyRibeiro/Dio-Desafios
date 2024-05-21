@@ -45,9 +45,9 @@ while True:
        #Prevenção de valores negativos ou igual a 0
        if deposito <= 0:
            print ("Valor digitado é inválido. Digite um valor positivo")
-       elif saque <= saldo and saques_total > 0:
+       else:
            saldo = saldo + deposito
-           extrato.append("Deposito: R$"+str(saque) + " Saldo: R$" + str(saldo))
+           extrato.append("Deposito: R$"+str(deposito) + " Saldo: R$" + str(saldo))
            print (f"Seu saldo é de R${saldo}.")
     #Menu Extrato ---------------------------------------------------------------------------
     elif menu == 3:
