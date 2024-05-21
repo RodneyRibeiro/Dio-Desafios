@@ -48,15 +48,31 @@ def filtrar_usuario(cpf,usuarios):
     usuarios_filtrados = [usuario for usuario in usuarios if usuario["cpf"] == cpf]
     return usuarios_filtrados[0] if usuarios_filtrados else None
 
-# def criar_conta (agencia,numero_conta,usuarios):
+def criar_conta (agencia,numero_conta,usuarios):
+    cpf = input("Digite o CPF do usuario: ")
+    usuario = filtrar_usuario(cpf,usuarios)
+    
+    if usuario:
+        print("Conta criada com sucesso! ")
+        return {"agencia": agencia,"numero_conta":numero_conta,"usuario":usuario}
+   
+    print ("Usuário não encontrado, sistema será encerrado!")
 
-# def listar_contas (contas):
+def listar_contas (contas):
+    for conta in contas:
+        texto = f"""\
+             Agência: \t{conta["agencia"]}
+             Conta:\t1t{conta["numero_conta"]}
+             Titular:\t{conta["usuario"]["nome"]}
+        """
+    print (texto)
 
 #Menu Saque ---------------------------------------------------------------------------
 def main():
     #variáveis
     AGENCIA = "0001"
     usuarios = []
+    contas = []
     saldo = 1000.0
     saques_total = 3
     extrato = []
@@ -96,15 +112,21 @@ def main():
        #Menu Extrato ---------------------------------------------------------------------------
        elif opcao == 3:
            emitir_extrato(saldo,extrato=extrato)  
+       #Menu Conta ---------------------------------------------------------------------------
        elif opcao == 4:
            print ("Criar Conta")
-           break       
+           numero_conta = len(contas) + 1
+           conta = criar_conta(AGENCIA, numero_conta, usuarios)
+           if conta:
+               contas.append(conta)       
+       #Menu User ---------------------------------------------------------------------------
        elif opcao == 5:
            print ("Novo Usuario")
            criar_usuario(usuarios)  
+       #Menu Listar ---------------------------------------------------------------------------
        elif opcao == 6:
            print ("Listar Contas")
-           break 
+           listar_contas(contas) 
        #Menu Sair ------------------------------------------------------------------------------
        elif opcao == 7:
            print ("Obrigado por ser nosso cliente.")
