@@ -48,7 +48,7 @@ variavel03=input("Informe Seu nome: ")
 print("nome", "sobrenome", end="...\n")
 print("nome", "sobrenome", sep="#")
 
-#impressão de variável
+#Interpolação de de variável
 print(f"Variavel01 = ''{variavel01}'' ")
 
 # 7 - Operadores -----------------------------------------------------------------------------------------------------------------------------------
@@ -169,4 +169,112 @@ while variavel16 != 0:
 else:
     print()
 
-#
+
+# 12 - String e Fatiamento ------------------------------------------------------------------------------------------------------------------------
+print("-------------------String e Fatiamento-------------------", end="\n")
+
+'''
+Maiúsculo, Minúsculo, Título
+'''
+variavel17 = "pYtHon"
+print(variavel17.upper()) #TUDO MAIÚSCULO
+print(variavel17.lower()) #tudo minúsculo
+print(variavel17.title()) #Primeira letra maiúscula
+
+'''
+Removendo espaço em Branco
+'''
+variavel18 = "  Python "
+print(variavel18.strip()) #REMOVE TODOS OS ESPAÇOS
+print(variavel18.lstrip()) #ESPAÇO DO LADO ESQUERDO
+print(variavel18.rstrip()) #ESPAÇO DO LADO DIREITO
+
+
+'''
+Junções e Centralização
+'''
+
+variavel19 = "Python"
+
+print(variavel19.center(10,"#"))
+print(".".join(variavel19))
+
+'''
+Interpolação de de variável
+'''
+
+print(f"Utilizar variáveis junto a string como esta {variavel19}")
+
+'''
+Formatar String
+'''
+
+variavel20 = 3.14159
+
+print(f"Valor da variável com 2 casas após a vírgula: {variavel20:.2f}")
+print(f"Valor da variável com 2 casas após a vírgula: {variavel20:10.2f}")
+
+'''
+Fatiar String
+'''
+
+variavel21 = "Antonio de Pádua Lisboa"
+
+print(variavel21[0])   # SOMENTE PRIMEIRA LETRA
+print(variavel21[:10]) # ATÉ O 10º CARACTER
+print(variavel21[10:]) # A PARTIR DO 10º CARACTER
+print(variavel21[::-1])# AO CONTRÁRIO
+
+'''
+String Multiplas Linhas(String Triplas)
+'''
+
+variavel22 = """\nOlá, isto é um teste.
+Percebe que respeita exata formatação.
+Por estar usando a string tripla.
+"""
+
+print (variavel22)
+
+# 13 - Listas ------------------------------------------------------------------------------------------------------------------------
+print("-------------------Listas-------------------", end="\n")
+
+#EXEMPLO DE LISTA
+variavel22 = ["Batata","Maçã","Laranja"]
+variavel23 = [1,2,3]
+variavel23 = [1,"Batata",[2,"Maçã"]]
+
+'''
+Listas Aninhadas
+'''
+
+variavel24 =[
+    [1, "a", 2],
+    ["b", 3, 4],
+    [6, 5, "c"]
+] 
+
+print(variavel24[0]) # [1, "a", 2]
+print(variavel24[0][0]) # 1
+print(variavel24[0][-1]) # 2
+print(variavel24[-1][-1]) # c
+      
+#FATIAMENTO DA LISTA FUNCIONA DO MESMO MODO QUE DA STRING
+
+'''
+ITERAR Listas
+'''
+variavel25 = 0
+for list in variavel22:
+    print(variavel22[variavel25])
+    variavel25  += 1
+
+'''
+ENUMERATE Saber qual índice do objeto da lista
+'''
+for indice,list in enumerate(variavel22):
+    print(f"{indice}:{list}")
+# 0:Batata
+# 1:Maçã
+# 2:Laranja
+
