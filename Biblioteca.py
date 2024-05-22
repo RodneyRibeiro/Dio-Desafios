@@ -278,3 +278,64 @@ for indice,list in enumerate(variavel22):
 # 1:Maçã
 # 2:Laranja
 
+# 14 - Métodos da Classe List ------------------------------------------------------------------------------------------------------------------------
+print("-------------------Métodos da Classe List-------------------", end="\n")
+
+'''
+[].append
+Adiciona valores a lista em ordem
+'''
+variavel26 = []
+variavel26.append(1)
+variavel26.append("Teste")
+variavel26.append([1,2,3]) # [1, 'Teste', [1, 2, 3]]
+
+print(variavel26)
+
+'''
+[].copy
+Copia  a lista
+'''
+variavel27  = variavel26.copy()
+variavel27.append("Variavel27")
+
+print (variavel27)
+
+'''
+[].clear
+Apaga toda a lista
+'''
+variavel26.clear()
+print(variavel26) # []
+
+'''
+[].count
+Conta quantos objetos há na lista
+'''
+
+print (variavel27.count("Variavel27")) # 1
+
+'''
+[].extend
+Adiciona elementos ao fim da lista
+'''
+
+variavel26.extend(["Teste","Variavel26"])
+print (variavel26) #['Teste', 'Variavel26']
+
+'''
+[].index
+Diz qual o index do objeto citado
+'''
+
+print(variavel26.index("Teste")) # 0
+
+'''
+[].pop
+Remove itens da lista em ordem da direita para esquerda
+'''
+
+variavel26.pop() #remove Variavel26
+variavel26.pop(0) # remove teste que está no índice 0
+print (variavel26)
+
