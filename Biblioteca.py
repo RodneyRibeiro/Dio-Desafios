@@ -169,3 +169,4 @@ while variavel16 != 0:
 else:
     print()
 
+#
