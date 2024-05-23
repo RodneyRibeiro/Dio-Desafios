@@ -573,3 +573,77 @@ Alguns métodos utilizado pelo SET são os mesmos da LISTA:
 len / in
 '''
 
+# 20 - Programação Orientada a Objeto(POO)/(OOP) ------------------------------------------------------------------------------------------------------------------------
+print("-------------------Programação Orientada a Objeto(POO)/(OOP)-------------------", end="\n")
+
+class Bicicleta:
+    def __init__(self, cor, modelo, ano, valor):
+        self.cor = cor
+        self.modelo = modelo
+        self.ano = ano
+        self.valor = valor
+
+    def buzinar(self):
+        print("Plim plim...")
+
+    def parar(self):
+        print("Parando bicicleta...")
+        print("Bicicleta parada!")
+
+    def correr(self):
+        print("Vrummmmm...")
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{chave}={valor}' for chave, valor in self.__dict__.items()])}"
+
+
+b1 = Bicicleta("vermelha", "caloi", 2022, 600)
+b1.buzinar()
+b1.correr()
+b1.parar()
+print(b1.cor, b1.modelo, b1.ano, b1.valor)
+
+b2 = Bicicleta("verde", "monark", 2000, 189)
+print(b2)
+b2.correr()
+
+# 21 - Herança na (POO)/(OOP) ------------------------------------------------------------------------------------------------------------------------
+print("-------------------Herança na (POO)/(OOP)-------------------", end="\n")
+
+class Veiculo:
+    def __init__(self, cor, placa, numero_rodas):
+        self.cor = cor
+        self.placa = placa
+        self.numero_rodas = numero_rodas
+
+    def ligar_motor(self):
+        print("Ligando o motor")
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{chave}={valor}' for chave, valor in self.__dict__.items()])}"
+
+
+class Motocicleta(Veiculo):
+    pass
+
+
+class Carro(Veiculo):
+    pass
+
+
+class Caminhao(Veiculo):
+    def __init__(self, cor, placa, numero_rodas, carregado):
+        super().__init__(cor, placa, numero_rodas)
+        self.carregado = carregado
+
+    def esta_carregado(self):
+        print(f"{'Sim' if self.carregado else 'Não'} estou carregado")
+
+
+moto = Motocicleta("preta", "abc-1234", 2)
+carro = Carro("branco", "xde-0098", 4)
+caminhao = Caminhao("roxo", "gfd-8712", 8, True)
+
+print(moto)
+print(carro)
+print(caminhao)
