@@ -339,3 +339,237 @@ variavel26.pop() #remove Variavel26
 variavel26.pop(0) # remove teste que está no índice 0
 print (variavel26)
 
+'''
+[].remove
+Remove itens da lista citados no valor entre ()
+'''
+variavel26.append("Variavel26")
+variavel26.append("Teste")
+variavel26.remove("Variavel26") #remove Variavel26
+print (variavel26)
+
+'''
+[].reverse
+Inverte a Ordem da Lista
+'''
+variavel27=[1,2,3,4,5,6,7,8,9,10]
+variavel27.reverse()
+print (variavel27) #[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+'''
+[].sort
+Ordena a lista em ordem decrescente ou crescente se o parâmetro for reverse=True
+'''
+variavel28  = ["python","js","c","java","csharp"] 
+variavel28.sort()
+print(variavel28) #['c', 'csharp', 'java', 'js', 'python']
+
+variavel28.sort(reverse=True) #['python', 'js', 'java', 'csharp', 'c']
+print(variavel28)
+
+'''
+len
+Conta quantos itens há em uma lista, também pode usar para contar quantos caracteres há em uma string.
+'''
+print(len(variavel28)) #5
+print(len("123456")) #6
+
+# 18 - TUPLAS ------------------------------------------------------------------------------------------------------------------------
+print("-------------------TUPLAS-------------------", end="\n")
+
+'''
+São praticamente a mesma coisa que lista, no entanto, são imutáveis. Ou seja, não tem como modificá-las.
+Os métodos da Tuplas são: [].count,[].index e len
+'''
+
+variavel29 = ("teste1","teste2","teste3",)
+variavel30 = tuple("python")
+variavel31 = ("Brasil",)
+print(variavel29)
+print(type(variavel29))
+
+# 19 - CONJUNTOS ------------------------------------------------------------------------------------------------------------------------
+print("-------------------CONJUNTOS-------------------", end="\n")
+
+'''
+SETS
+Elimina dados repetidos em conjuntos
+'''
+print(set([1,2,3,4,4,5,5,6,7,7,8,9,10])) #{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print(set("Abacaxi")) #{'b', 'i', 'a', 'c', 'x', 'A'}
+print(set(("palio","gol","palio"))) #{'gol', 'palio'}
+
+'''
+Também pode usar {} para definir o comando SET
+'''
+print({1,2,3,4,4,5,5,6,6,7,8,9,10}) #{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+'''
+Acessar dados, deve converter para lista primeiro
+
+variavel32 = {1,2,3,2}
+variavel32 = list(variavel32)
+variavel32[0]
+'''
+
+'''
+Métodos de Classe - SET
+{}.union
+UNIÃO ENTRE OS CONJUNTOS NA ORDEM REQUISITADA
+'''
+
+variavel33_a = {1,2}
+variavel33_b = {3,4}
+print(variavel33_a.union(variavel33_b)) # {1, 2, 3, 4}
+
+'''
+Métodos de Classe - SET
+{}.intersection
+VALORES EM COMUM
+'''
+variavel34_a = {1,2,3}
+variavel34_b = {2,3,4}
+print(variavel34_a.intersection(variavel34_b)) # {2, 3}
+
+'''
+Métodos de Classe - SET
+{}.difference
+RETORNA O QUE O DA ESQUERDA TEM E O QUE O DA DIREITA NÃO TEM
+'''
+variavel35_a = {1,2,3}
+variavel35_b = {2,3,4}
+print(variavel35_a.difference(variavel35_b)) # {1}
+print(variavel35_b.difference(variavel35_a)) # {4}
+
+
+'''
+Métodos de Classe - SET
+{}.symmetric_difference
+DIFERENÇA ENTRE OS DOIS
+'''
+variavel36_a = {1,2,3}
+variavel36_b = {2,3,4}
+print(variavel36_a.symmetric_difference(variavel36_b)) # {1, 4}
+
+'''
+Métodos de Classe - SET
+{}.issubset
+Se o conjunto da esquerda, está inteiramente dentro do da direita.
+Caso tenha algum objeto que não esteja, retorna Falso.
+TRUE -> ESQUERDA ESTA DENTRO DA DIREITA
+FALSE -> ESQUERDA NÃO ESTA DENTRO DA DIREITA
+'''
+variavel37_a = {1,2,3}
+variavel37_b = {4,1,2,5,6,3}
+print(variavel37_a.issubset(variavel37_b)) # True
+print(variavel37_b.issubset(variavel37_a)) # False
+
+'''
+Métodos de Classe - SET
+{}.issuperset
+Se o conjunto da esquerda, NÃO está inteiramente dentro do da direita.
+Caso tenha algum objeto que esteja, retorna True.
+TRUE -> DIREITA ESTA DENTRO DA ESQUERDA
+FALSE -> DIREITA NÃO ESTA DENTRO DA ESQUERDA
+'''
+
+variavel37_a = {1,2,3}
+variavel37_b = {4,1,2,5,6,3}
+print(variavel37_a.issuperset(variavel37_b)) # False
+print(variavel37_b.issuperset(variavel37_a)) # True
+
+'''
+Métodos de Classe - SET
+{}.isdisjoint
+Se o conjunto da esquerda, não possui nenhum elemento dentro do conjunto da direita.
+Comparar se são distintos sem exceção.
+TRUE -> SÃO DISTINTOS
+FALSE -> POSSUI ALGUM ELEMENTO EM COMUM
+'''
+variavel38_a = {1,2,3,4,5}
+variavel38_b = {6,7,8,9}
+variavel38_c = {1,0}
+print(variavel38_a.isdisjoint(variavel38_b)) # True
+print(variavel38_a.isdisjoint(variavel38_c)) # False
+
+'''
+Métodos de Classe - SET
+Alguns métodos utilizado pelo SET são os mesmos da LISTA:
+{}.add -> Adiciona valores DISTINTOS no final da lista. Se existir o valor ignora o comando.
+{}.clear / {}.copy
+{}.discart -> Descarta o valor citado, variavel.discart(45) por exemplo e ignora se não existir.
+{}.pop -> Apaga da esquerda para direita, ao contrário da lista
+{}.remove -> O mesmo que o discart, mas ocorre erro se o valor não existir.
+len / in
+'''
+
+# 20 - DICIONÁRIOS ------------------------------------------------------------------------------------------------------------------------
+print("-------------------DICIONÁRIOS-------------------", end="\n")
+
+'''
+DICIONÁRIOS
+Criação
+'''
+
+variavel39 = {"nome":"Antonio","idade":48}
+variavel39 = dict(nome="Antonio", idade=48)
+variavel39["telefone"] = "3333-1234"
+
+print(variavel39)
+
+'''
+DICIONÁRIOS
+Acessar
+'''
+print(variavel39["telefone"]) #3333-1234
+
+'''
+DICIONÁRIOS
+Iterar
+'''
+for chave in variavel39:
+    print(chave,variavel39[chave])
+
+# nome Antonio
+# idade 48
+# telefone 3333-1234
+
+'''
+Métodos de Classe - DICT (DICIONÁRIO)
+{}.fromkeys
+ADICIONA VALOR EM COMUM A CHAVES CITADAS
+'''
+variavel40 = dict.fromkeys(["nome","telefone"],"ValorTeste")
+print(variavel40) #{'nome': 'ValorTeste', 'telefone': 'ValorTeste'}
+
+'''
+Métodos de Classe - DICT (DICIONÁRIO)
+{}.get
+PROCURA CHAVE NO DICIONÁRIO E SE NÃO ENCONTRAR, RETORNA NONE OU SE,
+CASO TENHA CITADO VALOR APÓS ENTRE {}, RETORNA ESTE VALOR.
+'''
+print(variavel40.get("nome")) #None
+print(variavel40.get("NãoExiste"),{"Não encontrei"}) #{'Não encontrei'}
+
+'''
+Métodos de Classe - DICT (DICIONÁRIO)
+{}.itens
+EXIBE OS ITENS
+'''
+print(variavel40.items()) #dict_items([('nome', 'ValorTeste'), ('telefone', 'ValorTeste')])
+
+'''
+Métodos de Classe - DICT (DICIONÁRIO)
+
+EXIBE OS ITENS
+'''
+
+'''
+Métodos de Classe - DICT (DICIONÁRIO)
+Alguns métodos utilizado pelo SET são os mesmos da LISTA:
+{}.clear / {}.copy
+{}.keys -> Retorna as Chaves do Dicionário
+{}.pop -> Apaga somente se citar o valor entre () e se não achar o valor, pode retornar algo depois da ,.
+len / in
+'''
+
