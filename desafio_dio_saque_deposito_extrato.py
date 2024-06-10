@@ -3,7 +3,7 @@
     com saque, depósito e extrato.
 '''
 
-# Variáveis
+# Variáveis.
 SALDO = 1000.0
 SAQUES_TOTAL=3
 Extrato = []
