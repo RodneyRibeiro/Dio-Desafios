@@ -136,7 +136,7 @@ def listar_contas (contas):
              Conta:\t1t{conta["numero_conta"]}
              Titular:\t{conta["usuario"]["nome"]}
         """
-    print (texto)
+    print(texto) # type: ignore
 
 # Menu Saque ---------------------------------------------------------------------------
 def main():
