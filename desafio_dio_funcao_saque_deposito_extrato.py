@@ -164,10 +164,10 @@ def main():
             # Limite de saque 500
             elif saque > 500:
                 print ("Valor de saque excede o máximo permitido.(500)")
-            # Testar se não há saldo    
+            # Testar se não há saldo
             elif saque >= saldo and saques_total > 0:
                 print ("Não há saldo")
-            # Condição que o saque seja menor que 
+            # Condição que o saque seja menor que
             # o Saque e que esteja dentro dos 3 saques disponíveis
             elif saque <= saldo and saques_total > 0:
                 saldo,extrato,saques_total = sacar(
@@ -191,22 +191,22 @@ def main():
                 saldo,extrato = depositar(saldo,deposito,extrato)
         # Menu Extrato ---------------------------------------------------------------------------
         elif opcao == 3:
-            emitir_extrato(saldo,extrato=extrato)  
+            emitir_extrato(saldo,extrato=extrato)
         # Menu Conta ---------------------------------------------------------------------------
         elif opcao == 4:
             print ("Criar Conta")
             numero_conta = len(contas) + 1
             conta = criar_conta(AGENCIA, numero_conta, usuarios)
             if conta:
-                contas.append(conta)       
+                contas.append(conta)
          #Menu User ---------------------------------------------------------------------------
         elif opcao == 5:
             print ("Novo Usuario")
-            criar_usuario(usuarios)  
+            criar_usuario(usuarios)
         # Menu Listar ---------------------------------------------------------------------------
         elif opcao == 6:
             print ("Listar Contas")
-            listar_contas(contas) 
+            listar_contas(contas)
         # Menu Sair ------------------------------------------------------------------------------
         elif opcao == 7:
             print ("Obrigado por ser nosso cliente.")
