@@ -1,22 +1,34 @@
+'''
+    Desafio DIO onde devemos implementar sistema de conta bancária
+    com saque, depósito e extrato, utilizando funções.
+'''
 def menu():
- #Menu aparece todas as vezes que sai da opção selecionada.
- print ("""
-       [1] Saque
-       [2] Deposito
-       [3] Extrato
-       [4] Criar Conta
-       [5] Novo Usuário
-       [6] Listar Contas
-       [7] Sair
-    """)
-    #Seleção do menu
- return int(input())
+    '''
+    Exibe Menu para saque.
+    '''
+    # Menu aparece todas as vezes que sai da opção selecionada.
+    print ("""
+            [1] Saque
+            [2] Deposito
+            [3] Extrato
+            [4] Criar Conta
+            [5] Novo Usuário
+            [6] Listar Contas
+            [7] Sair
+       """)
+       # Seleção do menu
+    return int(input())
 
-def depositar(saldo,deposito,extrato,/):
-   saldo = saldo + deposito
-   extrato.append("Deposito: R$"+str(deposito) + " Saldo: R$" + str(saldo))
-   print (f"Seu saldo é de R${saldo}.")
-   return saldo,extrato
+def depositar(saldo,
+              deposito,
+              extrato,
+              /
+              ):
+
+    saldo = saldo + deposito
+    extrato.append("Deposito: R$"+str(deposito) + " Saldo: R$" + str(saldo))
+    print (f"Seu saldo é de R${saldo}.")
+    return saldo,extrato
 
 def sacar(*,saldo,saque,extrato,saques_total):
     saldo = saldo - saque
