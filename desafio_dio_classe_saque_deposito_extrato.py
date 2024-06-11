@@ -1,3 +1,6 @@
+"""Desafio DIO onde devemos implementar sistema de conta bancária
+    com saque, depósito e extrato, utilizando funções.
+"""
 import textwrap
 from abc import ABC, abstractclassmethod, abstractproperty
 from datetime import datetime

@@ -2,11 +2,19 @@
     com saque, depósito e extrato, utilizando funções.
 """
 class Cliente:
+    """Classe cliente com dados em comum como endereço e conta.
+    """
     def __init__(self,endereco):
         self.endereco = endereco
         self.contas = []
     
     def realizar_transacao(self,Conta,Transacao):
+        """Função vazia, não utilizada.
+
+        Args:
+            Conta (class): _description_
+            Transacao (_type_): _description_
+        """
         return
     
     def adicionar_conta(self,Conta):
