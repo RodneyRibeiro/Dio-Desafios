@@ -1,3 +1,6 @@
+"""Desafio DIO onde devemos implementar sistema de conta bancária
+    com saque, depósito e extrato, utilizando funções.
+"""
 class Cliente:
     def __init__(self,endereco):
         self.endereco = endereco
