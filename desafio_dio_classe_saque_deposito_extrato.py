@@ -6,13 +6,19 @@ from abc import ABC, abstractclassmethod, abstractproperty
 from datetime import datetime
 
 class Transacao(ABC):
+    """Registra transação.
+    """
     @property
     @abstractproperty
     def valor(self):
+        """Valor da transação.
+        """
         pass
 
     @abstractclassmethod
     def registrar(self, conta):
+        """Registro
+        """
         pass
 
 class Saque(Transacao):
@@ -170,6 +176,9 @@ class PessoaFisica(Cliente):
         self.cpf = cpf
 
 def menu():
+    """Funções de Menu
+    """
+
     menu = """\n
     ================ MENU ================
     [1]\tDepositar
@@ -183,18 +192,28 @@ def menu():
     return input(textwrap.dedent(menu))
 
 def filtrar_cliente(cpf, clientes):
+    """Teste para saber se cliente existe. Retorna None caso não exista.
+    """
     clientes_filtrados = [cliente for cliente in clientes if cliente.cpf == cpf]
     return clientes_filtrados[0] if clientes_filtrados else None
 
 def recuperar_conta_cliente(cliente):
+  """Tentar aplicar a recuperação de conta.
+  """
     if not cliente.contas:
         print("\n!!! Cliente não possui conta! !!!")
         return
 
-    # FIXME: não permite cliente escolher a conta
+
     return cliente.contas[0]
 
 def depositar(clientes):
+    """Realiza o filtro de CPF para saber se cliente foi cadastrado
+    pede o valor de depósito por input
+
+    Args:
+        clientes (_type_): _description_
+    """
     cpf = input("Informe o CPF do cliente: ")
     cliente = filtrar_cliente(cpf, clientes)
 
