@@ -78,3 +78,5 @@ teste_select_address = sqlalchemy.select(Address).where(Address.user_id.in_([2])
 for address in session.scalars(teste_select_address):
     print (address)
 # EOF
+
+#TESTE
