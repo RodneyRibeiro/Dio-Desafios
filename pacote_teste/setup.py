@@ -13,7 +13,7 @@ setup(
     description='Programa básico somente para teste',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/RodneyRibeiro/Dio-Desafios/tree/Desafios_Dio/criacao_de_pacote_desafio_dio',
+    url='https://github.com/RodneyRibeiro/Dio-Desafios/tree/Desafios_Dio/pacote_teste',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
